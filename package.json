@@ -1,0 +1,47 @@
+{
+  "name": "y-tian-plugin",
+  "version": "3.0.2",
+  "description": "Yunzai-Bot附属多功能插件",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./server/g4f.js",
+    "dev": "pm2 start ecosystem.config.cjs",
+    "prod": "pm2 start ecosystem.config.cjs --env production",
+    "stop": "pm2 stop api-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JustForSO/sentra-web-to-api"
+  },
+  "keywords": [
+    "llm",
+    "chatgpt",
+    "newapi",
+    "free"
+  ],
+  "author": "雨安",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "axios": "^1.4.0",
+    "chalk": "1.0.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
+    "fetch-undici": "^3.0.1",
+    "form-data": "^4.0.0",
+    "https-proxy-agent": "^7.0.4",
+    "js-tiktoken": "^1.0.15",
+    "keyv": "^4.5.2",
+    "keyv-file": "^0.2.0",
+    "koa": "^2.14.2",
+    "koa-bodyparser": "^4.4.1",
+    "mime-types": "^2.1.35",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.87.3",
+    "p-limit": "^6.2.0",
+    "pdf-parse": "^1.1.1",
+    "textract": "^2.5.0",
+    "undici": "^5.22.1"
+  }
+}

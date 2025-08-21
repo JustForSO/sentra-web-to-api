@@ -1,0 +1,95 @@
+{
+  "models": {
+    "gpt-4o": {
+      "providerModelName": "gpt-4o",
+      "aliases": [
+        "gpt-4o"
+      ]
+    },
+    "o3-mini": {
+      "providerModelName": "o3-mini",
+      "aliases": [
+        "o3-mini"
+      ]
+    },
+    "gpt-4.1": {
+      "providerModelName": "gpt-4.1",
+      "aliases": [
+        "gpt-4.1"
+      ]
+    },
+    "o3": {
+      "providerModelName": "o3",
+      "aliases": [
+        "o3"
+      ]
+    },
+    "gpt-5-chat": {
+      "providerModelName": "gpt-5-chat",
+      "aliases": [
+        "gpt-5-chat"
+      ]
+    },
+    "gemini-1.5-flash": {
+      "providerModelName": "gemini-1.5-flash",
+      "aliases": [
+        "gemini-1.5-flash",
+        "gemini-flash"
+      ]
+    },
+    "gpt-5-model-router": {
+      "providerModelName": "gpt-5-model-router",
+      "aliases": [
+        "gpt-5-model-router"
+      ]
+    },
+    "gpt-5": {
+      "providerModelName": "gpt-5",
+      "aliases": [
+        "gpt-5"
+      ]
+    },
+    "gpt-5-mini": {
+      "providerModelName": "gpt-5-mini",
+      "aliases": [
+        "gpt-5-mini"
+      ]
+    },
+    "claude-sonnet-4-20250514": {
+      "providerModelName": "claude-sonnet-4-20250514",
+      "aliases": [
+        "claude-sonnet-4-20250514"
+      ]
+    },
+    "claude-3-7-sonnet-20250219": {
+      "providerModelName": "us.anthropic.claude-3-7-sonnet-20250219-v1:0",
+      "aliases": [
+        "claude-3-7-sonnet-20250219"
+      ]
+    },
+    "gemini-2.5-pro": {
+      "providerModelName": "gemini-2.5-pro",
+      "aliases": [
+        "gemini-2.5-pro"
+      ]
+    },
+    "gemini-2.5-flash": {
+      "providerModelName": "gemini-2.5-flash",
+      "aliases": [
+        "gemini-2.5-flash"
+      ]
+    },
+    "grok-3": {
+      "providerModelName": "grok-3-latest",
+      "aliases": [
+        "grok-3-latest"
+      ]
+    },
+    "grok-4": {
+      "providerModelName": "grok-4-latest",
+      "aliases": [
+        "grok-4-latest"
+      ]
+    }
+  }
+}

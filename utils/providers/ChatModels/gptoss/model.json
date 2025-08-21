@@ -1,0 +1,16 @@
+{
+  "models": {
+    "gpt-oss-120b": {
+      "providerModelName": "gpt-oss-120b",
+      "aliases": [
+        "gpt-oss-120b"
+      ]
+    },
+    "gpt-5-nano": {
+      "providerModelName": "gpt-5-nano",
+      "aliases": [
+        "gpt-5-nano"
+      ]
+    }
+  }
+}
