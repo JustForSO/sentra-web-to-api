@@ -1,0 +1,12 @@
+{
+  "models": {
+    "flux-1-dev": {
+      "providerModelName": "black-forest-labs-flux-1-dev",
+      "aliases": [
+        "flux-1-dev",
+        "flux-dev",
+        "flux"
+      ]
+    }
+  }
+}

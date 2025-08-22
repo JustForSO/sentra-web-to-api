@@ -13,6 +13,9 @@ import { operaaria } from "../providers/ChatModels/operaaria/operaariaClient.js"
 import { glm } from "../providers/ChatModels/glm/glmClient.js";
 import { kimi } from "../providers/ChatModels/kimi/kimiClient.js";
 import { copilot } from "../providers/ChatModels/copilot/copilotClient.js";
+import { jimeng } from "../providers/ChatModels/jimeng/jimengClient.js";
+import { huggingface } from "../providers/ChatModels/huggingface/huggingfaceClient.js";
+import { blackforest } from "../providers/ChatModels/blackforest/blackforestClient.js";
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -55,7 +58,10 @@ const providerStats = {
     operaaria: { success: 0, failure: 0, weight: 82 },
     glm: { success: 0, failure: 0, weight: 91 },
     kimi: { success: 0, failure: 0, weight: 93 },
-    copilot: { success: 0, failure: 0, weight: 94 }
+    copilot: { success: 0, failure: 0, weight: 94 },
+    jimeng: { success: 0, failure: 0, weight: 95 },
+    huggingface: { success: 0, failure: 0, weight: 88 },
+    blackforest: { success: 0, failure: 0, weight: 96 }
 };
 
 // 获取当前文件所在的目录
@@ -136,7 +142,10 @@ const providerApis = {
     operaaria: operaaria,
     glm: glm,
     kimi: kimi,
-    copilot: copilot
+    copilot: copilot,
+    jimeng: jimeng,
+    huggingface: huggingface,
+    blackforest: blackforest
 };
 
 // 默认超时时间 (可通过环境变量覆盖) AI_DEFAULT_TIMEOUT_MS

@@ -1,0 +1,46 @@
+{
+  "models": {
+    "jimeng-v3.1": {
+      "providerModelName": "jimeng-3.1",
+      "aliases": [
+        "jimeng-v3.1"
+      ]
+    },
+    "jimeng-v3.0": {
+      "providerModelName": "jimeng-3.0",
+      "aliases": [
+        "jimeng-v3.0"
+      ]
+    },
+    "jimeng-v2.1": {
+      "providerModelName": "jimeng-2.1",
+      "aliases": [
+        "jimeng-v2.1"
+      ]
+    },
+    "jimeng-v2.0-pro": {
+      "providerModelName": "jimeng-2.0-pro",
+      "aliases": [
+        "jimeng-v2.0-pro"
+      ]
+    },
+    "jimeng-v2.0": {
+      "providerModelName": "jimeng-2.0",
+      "aliases": [
+        "jimeng-v2.0"
+      ]
+    },
+    "jimeng-video-v3.0": {
+      "providerModelName": "jimeng-video-3.0",
+      "aliases": [
+        "jimeng-video-v3.0"
+      ]
+    },
+    "jimeng-video-s2.0": {
+      "providerModelName": "jimeng-video-s2.0",
+      "aliases": [
+        "jimeng-video-s2.0"
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { huggingfaceClient } from "../providers/DrawingModels/huggingface/huggingfaceClient.js";
 import { jimengClient } from "../providers/DrawingModels/jimeng/jimengClient.js";
-import { imagelabs } from "../providers/DrawingModels/imagelabs/imagelabs.js";
+import { blackforest } from "../providers/DrawingModels/blackforest/blackforestClient.js";
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -31,9 +31,9 @@ const providerStats = {
     liblib: { success: 0, failure: 0, weight: 100 },
     huggingface: { success: 0, failure: 0, weight: 100 },
     jimeng: { success: 0, failure: 0, weight: 100 },
-    imagelabs: { success: 0, failure: 0, weight: 100 },
     kusa: { success: 0, failure: 0, weight: 100 },
     modelscope: { success: 0, failure: 0, weight: 100 },
+    blackforest: { success: 0, failure: 0, weight: 95 },
 };
 
 // 获取当前文件所在的目录
@@ -100,7 +100,7 @@ Object.keys(providerModelConfigs).forEach(provider => {
 const providerApis = {
     huggingface: huggingfaceClient,
     jimeng: jimengClient,
-    imagelabs: imagelabs,
+    blackforest: blackforest,
 };
 
 // 默认超时时间 (可通过环境变量覆盖) AI_DEFAULT_TIMEOUT_MS
