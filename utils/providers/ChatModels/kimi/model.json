@@ -1,8 +1,40 @@
 {
   "models": {
-    "net-gpt-4o-mini": {
-      "providerModelName": "net-gpt-4o-mini",
-      "aliases": ["net-gpt-4o-mini"]
+    "kimi": {
+      "providerModelName": "kimi",
+      "aliases": [
+        "kimi"
+      ]
+    },
+    "kimi-k2": {
+      "providerModelName": "k2",
+      "aliases": [
+        "kimi-k2"
+      ]
+    },
+    "kimi-k1.5": {
+      "providerModelName": "k1.5",
+      "aliases": [
+        "kimi-k1.5"
+      ]
+    },
+    "kimi-search": {
+      "providerModelName": "kimi-search",
+      "aliases": [
+        "kimi-search"
+      ]
+    },
+    "kimi-research": {
+      "providerModelName": "kimi-research",
+      "aliases": [
+        "kimi-research"
+      ]
+    },
+    "kimi-math": {
+      "providerModelName": "kimi-math",
+      "aliases": [
+        "kimi-math"
+      ]
     }
   }
 }

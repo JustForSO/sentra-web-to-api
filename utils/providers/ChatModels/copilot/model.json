@@ -1,0 +1,22 @@
+{
+  "models": {
+    "gpt-4o-copilot": {
+      "providerModelName": "copilot",
+      "aliases": [
+        "gpt-4o-copilot"
+      ]
+    },
+    "o1-copilot": {
+      "providerModelName": "Think Deeper",
+      "aliases": [
+        "o1-copilot"
+      ]
+    },
+    "gpt-5-copilot": {
+      "providerModelName": "Smart (GPT-5)",
+      "aliases": [
+        "gpt-5-copilot"
+      ]
+    }
+  }
+}

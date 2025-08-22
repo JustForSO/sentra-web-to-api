@@ -1,0 +1,28 @@
+{
+  "models": {
+    "gpt-4o-mini": {
+      "id": "gpt-4o-mini",
+      "name": "GPT-4o Mini",
+      "provider": "chatai",
+      "maxTokens": 4096,
+      "supportsFunctions": false,
+      "supportsVision": false,
+      "pricing": {
+        "input": 0,
+        "output": 0
+      }
+    },
+    "gpt-4o-mini-2024-07-18": {
+      "id": "gpt-4o-mini-2024-07-18",
+      "name": "GPT-4o Mini 2024-07-18",
+      "provider": "chatai",
+      "maxTokens": 4096,
+      "supportsFunctions": false,
+      "supportsVision": false,
+      "pricing": {
+        "input": 0,
+        "output": 0
+      }
+    }
+  }
+}

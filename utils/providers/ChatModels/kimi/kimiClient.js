@@ -1,9 +1,10 @@
-// KimiCompletion.js
 import kimiAPI from './kimi.js';
-import dotenv from 'dotenv';
-dotenv.config();
+import { loadProviderEnv } from '../../loadEnv.js';
 
-export async function KimiCompletion(messages, refreshToken, refConvId) {
+// 加载当前目录的.env文件
+loadProviderEnv(import.meta.url);
+
+export async function kimi(messages, model) {
     try {
         const rawRefreshTokens = process.env.KIMI_REFRESH_TOKENS || '';
         const refreshTokens = rawRefreshTokens
@@ -14,47 +15,33 @@ export async function KimiCompletion(messages, refreshToken, refConvId) {
         // 检查 Refresh Tokens 是否存在
         if (refreshTokens.length === 0) {
             console.error("错误：KIMI_REFRESH_TOKENS 未配置或为空。请检查 .env 文件。");
-            return {
-                output: "生成失败：未配置Kimi Refresh Token，请检查 .env 文件。",
-                refreshToken: null,
-                convId: null
-            };
+            throw new Error("生成失败：未配置Kimi Refresh Token，请检查 .env 文件。");
         }
 
-        // 优先使用传入的 refreshToken，否则从配置中随机选择一个
-        const selectedRefreshToken = refreshToken || refreshTokens[Math.floor(Math.random() * refreshTokens.length)];
-        const KimiModel = process.env.KIMI_MODEL || 'kimi';
+        // 随机选择一个refresh token
+        const selectedRefreshToken = refreshTokens[Math.floor(Math.random() * refreshTokens.length)];
+        const KimiModel = process.env.KIMI_MODEL || model;
 
         // 如果没有传入 RefreshToken 且随机选择的也为空，则报错
         if (!selectedRefreshToken) {
              console.error("错误：无法获取有效的 Kimi Refresh Token。");
-             return {
-                output: "生成失败：无法获取有效的Kimi Refresh Token。",
-                refreshToken: null,
-                convId: null
-            };
+             throw new Error("生成失败：无法获取有效的Kimi Refresh Token。");
         }
 
-        // 如果没有 refConvId，则先创建新的会话
+        // 创建新的会话
+        console.log("正在创建 Kimi 会话...");
+        const conversationName = "kimi_conversation_" + Date.now();
+        const refConvId = await kimiAPI.createConversation(KimiModel, conversationName, selectedRefreshToken);
+
         if (!refConvId) {
-            console.log("首次调用，正在创建 Kimi 会话...");
-            const conversationName = "kimi_conversation_" + Date.now(); // 使用时间戳确保唯一性
-            refConvId = await kimiAPI.createConversation(KimiModel, conversationName, selectedRefreshToken);
-
-            if (!refConvId) {
-                console.error("错误：未能成功创建 Kimi 会话ID。", refConvId);
-                return {
-                    output: "生成失败：未能成功创建Kimi会话ID。",
-                    refreshToken: selectedRefreshToken, // 尝试返回已选的token
-                    convId: null
-                };
-            }
-            console.log(`成功创建 Kimi 会话ID: ${refConvId}`);
+            console.error("错误：未能成功创建 Kimi 会话ID。", refConvId);
+            throw new Error("生成失败：未能成功创建Kimi会话ID。");
         }
+        console.log(`成功创建 Kimi 会话ID: ${refConvId}`);
 
-        // 发送实际消息
+        // 发送实际消息，传递原始模型名用于模式检测
         const response = await kimiAPI.createCompletion({
-            model: KimiModel,
+            model: model, // 使用原始传入的模型名，包含 research、math 等信息
             messages,
             refreshToken: selectedRefreshToken,
             refConvId: refConvId,
@@ -64,19 +51,11 @@ export async function KimiCompletion(messages, refreshToken, refConvId) {
         // 检查响应是否有效
         if (!response || !response.choices || response.choices.length === 0 || !response.choices[0].message || !response.choices[0].message.content) {
             console.error("Kimi API 返回了无效响应:", response);
-            return {
-                output: "生成失败：Kimi API 返回了无效或空响应。",
-                refreshToken: selectedRefreshToken,
-                convId: refConvId
-            };
+            throw new Error("生成失败：Kimi API 返回了无效或空响应。");
         }
 
         console.log('Kimi API 回答:', response.choices[0].message.content);
-        return {
-            output: response.choices[0].message.content,
-            refreshToken: selectedRefreshToken,
-            convId: refConvId
-        };
+        return response.choices[0].message.content;
     } catch (error) {
         console.error('Kimi API 调用错误:', error.message);
         // 尝试从错误对象中提取更详细的信息
@@ -87,10 +66,6 @@ export async function KimiCompletion(messages, refreshToken, refConvId) {
             errorMessage += ` 错误详情: ${error.message}`;
         }
 
-        return {
-            output: errorMessage,
-            refreshToken: refreshToken, // 返回原始传入的或已尝试选择的token
-            convId: refConvId
-        };
+        throw new Error(errorMessage);
     }
 }

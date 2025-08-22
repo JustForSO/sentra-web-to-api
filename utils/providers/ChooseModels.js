@@ -1,11 +1,18 @@
 import { chatru } from "../providers/ChatModels/chatru/chatru.js";
+import { airforce } from "../providers/ChatModels/airforce/airforce.js";
 import { pollinations } from "../providers/ChatModels/pollinations/pollinations.js";
 import { SlackAi } from "../providers/ChatModels/slack/slack.js";
 import { YuanbaoCompletion } from "../providers/ChatModels/Yuanbao/YuanbaoApi.js";
-import { imagelabs } from "../providers/ChatModels/imagelabs/imagelabs.js";
 import { qwen3 } from "../providers/ChatModels/qwen3/qwen3.js";
 import { gptoss } from "../providers/ChatModels/gptoss/gptossClient.js";
 import { highlight } from "../providers/ChatModels/highlight/highlightClient.js";
+import { chatai } from "../providers/ChatModels/chatai/chataiClient.js";
+import { oivscode0501 } from "../providers/ChatModels/oivscode0501/oivscode0501Client.js";
+import { oivscode2 } from "../providers/ChatModels/oivscode2/oivscode2Client.js";
+import { operaaria } from "../providers/ChatModels/operaaria/operaariaClient.js";
+import { glm } from "../providers/ChatModels/glm/glmClient.js";
+import { kimi } from "../providers/ChatModels/kimi/kimiClient.js";
+import { copilot } from "../providers/ChatModels/copilot/copilotClient.js";
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -36,14 +43,19 @@ const RETRY_CONFIG = {
 const providerStats = {
     chatru: { success: 0, failure: 0, weight: 89 },
     pollinations: { success: 0, failure: 0, weight: 88 },
-    slack: { success: 0, failure: 0, weight: 100 },
-    imagelabs: { success: 0, failure: 0, weight: 100 },
-    jimeng: { success: 0, failure: 0, weight: 100 },
-    huggingface: { success: 0, failure: 0, weight: 100 },
-    Yuanbao: { success: 0, failure: 0, weight: 100 },
-    qwen3: { success: 0, failure: 0, weight: 100 },
-    gptoss: { success: 0, failure: 0, weight: 95 },
-    highlight: { success: 0, failure: 0, weight: 98 },
+    airforce: { success: 0, failure: 0, weight: 100 },
+    slack: { success: 0, failure: 0, weight: 85 },
+    Yuanbao: { success: 0, failure: 0, weight: 95 },
+    qwen3: { success: 0, failure: 0, weight: 90 },
+    gptoss: { success: 0, failure: 0, weight: 92 },
+    highlight: { success: 0, failure: 0, weight: 87 },
+    chatai: { success: 0, failure: 0, weight: 86 },
+    oivscode0501: { success: 0, failure: 0, weight: 84 },
+    oivscode2: { success: 0, failure: 0, weight: 83 },
+    operaaria: { success: 0, failure: 0, weight: 82 },
+    glm: { success: 0, failure: 0, weight: 91 },
+    kimi: { success: 0, failure: 0, weight: 93 },
+    copilot: { success: 0, failure: 0, weight: 94 }
 };
 
 // 获取当前文件所在的目录
@@ -110,14 +122,21 @@ Object.keys(providerModelConfigs).forEach(provider => {
 
 // 提供商对应的API函数映射
 const providerApis = {
+    airforce: airforce,
     chatru: chatru,
     pollinations: pollinations,
     slack: SlackAi,
-    imagelabs: imagelabs,
     Yuanbao: YuanbaoCompletion,
     qwen3: qwen3,
     gptoss: gptoss,
-    highlight: highlight
+    highlight: highlight,
+    chatai: chatai,
+    oivscode0501: oivscode0501,
+    oivscode2: oivscode2,
+    operaaria: operaaria,
+    glm: glm,
+    kimi: kimi,
+    copilot: copilot
 };
 
 // 默认超时时间 (可通过环境变量覆盖) AI_DEFAULT_TIMEOUT_MS

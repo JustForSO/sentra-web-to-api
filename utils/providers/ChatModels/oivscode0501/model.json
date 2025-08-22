@@ -1,0 +1,10 @@
+{
+  "models": {
+    "deepseek-v3": {
+      "providerModelName": "gpt-4.1-mini",
+      "aliases": [
+        "gpt-4.1-mini"
+      ]
+    }
+  }
+}

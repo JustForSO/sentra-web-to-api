@@ -1,0 +1,120 @@
+{
+  "models": {
+    "gpt-4o-mini": {
+      "providerModelName": "gpt-4o-mini",
+      "aliases": ["gpt-4o-mini"]
+    },
+    "gpt-4.1-mini": {
+      "providerModelName": "gpt-4.1-mini",
+      "aliases": ["gpt-4.1-mini"]
+    },
+    "gpt-4.1-nano": {
+      "providerModelName": "gpt-4.1-nano",
+      "aliases": ["gpt-4.1-nano"]
+    },
+    "gpt-5-nano": {
+      "providerModelName": "gpt-5-nano",
+      "aliases": ["gpt-5-nano"]
+    },
+    "gpt-5-mini": {
+      "providerModelName": "gpt-5-mini",
+      "aliases": ["gpt-5-mini"]
+    },
+    "gpt-5-chat": {
+      "providerModelName": "gpt-5-chat",
+      "aliases": ["gpt-5-chat"]
+    },
+    "gpt-oss-120b": {
+      "providerModelName": "gpt-oss-120b",
+      "aliases": ["gpt-oss-120b"]
+    },
+    "gpt-oss-20b": {
+      "providerModelName": "gpt-oss-20b",
+      "aliases": ["gpt-oss-20b"]
+    },
+    "gemini-2.5-pro": {
+      "providerModelName": "gemini-2.5-pro",
+      "aliases": ["gemini-2.5-pro"]
+    },
+    "gemini-2.5-flash": {
+      "providerModelName": "gemini-2.5-flash",
+      "aliases": ["gemini-2.5-flash"]
+    },
+    "kimi-k2": {
+      "providerModelName": "kimi-k2",
+      "aliases": ["kimi-k2"]
+    },
+    "sonar-reasoning": {
+      "providerModelName": "sonar-reasoning",
+      "aliases": ["sonar-reasoning"]
+    },
+    "grok-4": {
+      "providerModelName": "grok-4",
+      "aliases": ["grok-4"]
+    },
+    "mistral-large": {
+      "providerModelName": "mistral-large",
+      "aliases": ["mistral-large"]
+    },
+    "qwen3-coder": {
+      "providerModelName": "qwen3-coder",
+      "aliases": ["qwen3-coder"]
+    },
+    "mistral-medium": {
+      "providerModelName": "mistral-medium",
+      "aliases": ["mistral-medium"]
+    },
+    "pixtral": {
+      "providerModelName": "pixtral",
+      "aliases": ["pixtral"]
+    },
+    "mistral-small": {
+      "providerModelName": "mistral-small",
+      "aliases": ["mistral-small"]
+    },
+    "jamba-mini-1.7": {
+      "providerModelName": "jamba-mini-1.7",
+      "aliases": ["jamba-mini-1.7"]
+    },
+    "openchat-3.5": {
+      "providerModelName": "openchat-3.5",
+      "aliases": ["openchat-3.5"]
+    },
+    "deepseek-v3": {
+      "providerModelName": "deepseek-v3",
+      "aliases": ["deepseek-v3"]
+    },
+    "deepseek-r1": {
+      "providerModelName": "deepseek-r1",
+      "aliases": ["deepseek-r1"]
+    },
+    "glm-4.5": {
+      "providerModelName": "glm-4.5",
+      "aliases": ["glm-4.5"]
+    },
+    "qwen3-235b": {
+      "providerModelName": "qwen3-235b",
+      "aliases": ["qwen3-235b"]
+    },
+    "llama-3.3": {
+      "providerModelName": "llama-3.3",
+      "aliases": ["llama-3.3"]
+    },
+    "llama-4-scout": {
+      "providerModelName": "llama-4-scout",
+      "aliases": ["llama-4-scout"]
+    },
+    "llama-4-maverick": {
+      "providerModelName": "llama-4-maverick",
+      "aliases": ["llama-4-maverick"]
+    },
+    "command-r": {
+      "providerModelName": "command-r",
+      "aliases": ["command-r"]
+    },
+    "claude-sonnet-4": {
+      "providerModelName": "claude-sonnet-4",
+      "aliases": ["claude-sonnet-4"]
+    }
+  }
+}

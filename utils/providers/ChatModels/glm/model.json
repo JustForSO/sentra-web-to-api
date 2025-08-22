@@ -1,0 +1,52 @@
+{
+  "models": {
+    "glm-4.5": {
+      "providerModelName": "GLM-4.5",
+      "aliases": [
+        "glm-4.5"
+      ]
+    },
+    "glm-4.5-air": {
+      "providerModelName": "GLM-4.5-Air",
+      "aliases": [
+        "glm-4.5-air"
+      ]
+    },
+    "glm-4.5v": {
+      "providerModelName": "GLM-4.5V",
+      "aliases": [
+        "glm-4.5v"
+      ]
+    },
+    "glm-4-32b": {
+      "providerModelName": "GLM-4-32B",
+      "aliases": [
+        "glm-4-32b"
+      ]
+    },
+    "glm-4.1v-thinking": {
+      "providerModelName": "GLM-4.1V-9B-Thinking",
+      "aliases": [
+        "glm-4.1v-thinking"
+      ]
+    },
+    "z1-rumination": {
+      "providerModelName": "Z1-Rumination",
+      "aliases": [
+        "z1-rumination"
+      ]
+    },
+    "z1-32b": {
+      "providerModelName": "Z1-32B",
+      "aliases": [
+        "z1-32b"
+      ]
+    },
+    "glm-4-flash": {
+      "providerModelName": "任务专用",
+      "aliases": [
+        "glm-4-flash"
+      ]
+    }
+  }
+}

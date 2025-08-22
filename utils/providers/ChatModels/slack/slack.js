@@ -6,11 +6,12 @@ const __dirname = dirname(__filename);
 const require = createRequire(import.meta.url);
 const formDataPath = join(__dirname, '../../../../node_modules/form-data');
 const FormData = require(formDataPath);
-import fs from 'fs';
 import fetch from 'node-fetch';
 import { getProxyAgent } from '../../../requests/proxy.js';
+import { loadProviderEnv } from '../../loadEnv.js';
 
-const DATA_FILE = join(__dirname, 'slack.json');
+// 加载当前目录的.env文件
+loadProviderEnv(import.meta.url);
 
 class SlackClient {
     constructor() {
@@ -189,14 +190,27 @@ class SlackClient {
         }
     }
 
-    // 从数据文件中获取Cookie
+    // 从环境变量中获取配置
     async getCookie() {
         try {
-            const data = JSON.parse(fs.readFileSync(DATA_FILE)).slack; // 读取数据文件
-            return data; // 返回Cookie
+            const bot_token = process.env.SLACK_BOT_TOKEN;
+            const cookie_d = process.env.SLACK_COOKIE_D;
+            const bot_id = process.env.SLACK_BOT_ID;
+            const channel_id = process.env.SLACK_CHANNEL_ID;
+
+            if (!bot_token || !cookie_d || !bot_id || !channel_id) {
+                throw new Error('缺少必要的Slack配置，请检查.env文件中的SLACK_BOT_TOKEN、SLACK_COOKIE_D、SLACK_BOT_ID、SLACK_CHANNEL_ID');
+            }
+
+            return {
+                bot_token,
+                cookie_d,
+                bot_id,
+                channel_id
+            };
         } catch (error) {
-            console.error("Error reading or parsing data file:", error);
-            throw new Error(`读取或解析数据文件时发生错误: ${error.message}`); // 抛出错误
+            console.error("Error reading Slack configuration:", error);
+            throw new Error(`读取Slack配置时发生错误: ${error.message}`);
         }
     }
 
@@ -220,15 +234,13 @@ class SlackClient {
 
 const slack = new SlackClient();
 
-export async function SlackAi(messages) {
-
+export async function SlackAi(messages, model) {
     try {
         const response = await slack.chat(messages);
-        //console.log('Slack 回复:', response); // 打印 Slack 的回复
+        console.log('Slack 回复:', response);
         return response?.trim();
-
     } catch (error) {
-        console.error('主程序发生错误:', error.message); // 捕获主程序中的错误
-        return null;
+        console.error('Slack API 调用错误:', error.message);
+        throw new Error(`生成失败：${error.message}`);
     }
 }

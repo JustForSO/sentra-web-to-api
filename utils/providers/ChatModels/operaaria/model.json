@@ -1,0 +1,10 @@
+{
+  "models": {
+    "aria": {
+      "providerModelName": "aria",
+      "aliases": [
+        "aria"
+      ]
+    }
+  }
+}

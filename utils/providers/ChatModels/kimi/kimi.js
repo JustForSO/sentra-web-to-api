@@ -1,7 +1,6 @@
 import { PassThrough } from "stream";
 import crypto from 'crypto';
 import path from 'path';
-import _ from 'lodash';
 import axios from 'axios';
 import mimeTypes from 'mime-types';
 
@@ -388,12 +387,12 @@ class KimiClient {
         const urls = [];
         if (!messages.length) return urls;
         const lastMessage = messages[messages.length - 1];
-        if (_.isArray(lastMessage.content)) {
+        if (Array.isArray(lastMessage.content)) {
             lastMessage.content.forEach(v => {
-                if (!_.isObject(v) || !['file', 'image_url'].includes(v['type'])) return;
-                if (v['type'] === 'file' && _.isObject(v['file_url']) && _.isString(v['file_url']['url']))
+                if (typeof v !== 'object' || v === null || !['file', 'image_url'].includes(v['type'])) return;
+                if (v['type'] === 'file' && typeof v['file_url'] === 'object' && v['file_url'] !== null && typeof v['file_url']['url'] === 'string')
                     urls.push(v['file_url']['url']);
-                else if (v['type'] === 'image_url' && _.isObject(v['image_url']) && _.isString(v['image_url']['url']))
+                else if (v['type'] === 'image_url' && typeof v['image_url'] === 'object' && v['image_url'] !== null && typeof v['image_url']['url'] === 'string')
                     urls.push(v['image_url']['url']);
             });
         }
@@ -405,9 +404,9 @@ class KimiClient {
         let content;
         if (isRefConv || messages.length < 2) {
             content = messages.reduce((content, message) => {
-                if (_.isArray(message.content)) {
+                if (Array.isArray(message.content)) {
                     return message.content.reduce((_content, v) => {
-                        if (!_.isObject(v) || v['type'] !== 'text') return _content;
+                        if (typeof v !== 'object' || v === null || v['type'] !== 'text') return _content;
                         return _content + `${v["text"] || ""}\n`;
                     }, content);
                 }
@@ -416,7 +415,7 @@ class KimiClient {
         } else {
             let latestMessage = messages[messages.length - 1];
             let hasFileOrImage = Array.isArray(latestMessage.content) &&
-                latestMessage.content.some(v => (typeof v === 'object' && ['file', 'image_url'].includes(v['type'])));
+                latestMessage.content.some(v => (typeof v === 'object' && v !== null && ['file', 'image_url'].includes(v['type'])));
             if (hasFileOrImage) {
                 messages.splice(messages.length - 1, 0, { "content": "关注用户最新发送文件和消息", "role": "system" });
                 logger.info("注入提升尾部文件注意力system prompt");
@@ -425,9 +424,9 @@ class KimiClient {
                 logger.info("注入提升尾部消息注意力system prompt");
             }
             content = messages.reduce((content, message) => {
-                if (_.isArray(message.content)) {
+                if (Array.isArray(message.content)) {
                     return message.content.reduce((_content, v) => {
-                        if (!_.isObject(v) || v['type'] !== 'text') return _content;
+                        if (typeof v !== 'object' || v === null || v['type'] !== 'text') return _content;
                         return _content + `${message.role || "user"}:${v["text"] || ""}\n`;
                     }, content);
                 }
@@ -540,7 +539,7 @@ class KimiClient {
         }
         if (!result.data) return null;
         const { error_type, message } = result.data;
-        if (!_.isString(error_type)) return result.data;
+        if (typeof error_type !== 'string') return result.data;
         if (error_type === 'auth.token.invalid') {
             this.accessTokenMap.delete(refreshToken);
             throw new APIException(EX.API_REQUEST_FAILED, 'Token 无效');
