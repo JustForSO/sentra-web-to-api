@@ -12,7 +12,7 @@ export const chatru = async (messages, model) => {
     const API_URL = 'https://main.gpt-chatbotru-4-o1.ru/api/openai/v1/chat/completions';
 
     const requestConfig = {
-        model: model.includes('-vision') ? model.replace('-vision', '') : model,
+        model,
         messages,
         stream: true
     };

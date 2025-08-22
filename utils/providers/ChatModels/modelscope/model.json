@@ -1,0 +1,10 @@
+{
+  "models": {
+    "modelscope-imagen": {
+      "providerModelName": "modelscope-imagen",
+      "aliases": [
+        "modelscope-imagen"
+      ]
+    }
+  }
+}
