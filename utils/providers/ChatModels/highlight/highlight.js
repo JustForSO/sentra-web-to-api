@@ -304,6 +304,7 @@ export default class HighlightProvider extends EventEmitter {
 
         return new Promise((resolve, reject) => {
             const stream = response.data;
+            //console.log(stream)
             let content = '';
             let buffer = '';
 

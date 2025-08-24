@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-08-23T07:06:43.274Z",
+  "url": "https://lmarena.ai/api/stream/create-evaluation",
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+    "content-type": "text/plain;charset=UTF-8",
+    "priority": "u=1, i",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "cookie": "[REDACTED]",
+    "Referer": "https://lmarena.ai/c/485735e1-5e7c-41b2-ad0a-3b8fa1c7cada"
+  },
+  "requestBody": {
+    "id": "534e4e41-b4b4-4d56-98e1-335cae72beab",
+    "mode": "direct",
+    "modelAId": "ee116d12-64d6-48a8-88e5-b2d06325cdd2",
+    "userMessageId": "e800e9a7-e90b-4a94-8f9c-75f409f3d3c5",
+    "modelAMessageId": "1acb95ae-7f78-4ff5-8baf-990604947331",
+    "messages": [
+      {
+        "id": "e800e9a7-e90b-4a94-8f9c-75f409f3d3c5",
+        "role": "user",
+        "content": "你好",
+        "experimental_attachments": [],
+        "parentMessageIds": [],
+        "participantPosition": "a",
+        "modelId": null,
+        "evaluationSessionId": "534e4e41-b4b4-4d56-98e1-335cae72beab",
+        "status": "pending",
+        "failureReason": null
+      },
+      {
+        "id": "1acb95ae-7f78-4ff5-8baf-990604947331",
+        "role": "assistant",
+        "content": "",
+        "experimental_attachments": [],
+        "parentMessageIds": [
+          "e800e9a7-e90b-4a94-8f9c-75f409f3d3c5"
+        ],
+        "participantPosition": "a",
+        "modelId": "ee116d12-64d6-48a8-88e5-b2d06325cdd2",
+        "evaluationSessionId": "534e4e41-b4b4-4d56-98e1-335cae72beab",
+        "status": "pending",
+        "failureReason": null
+      }
+    ],
+    "modality": "chat"
+  },
+  "headerVariant": "minimal"
+}

@@ -1,0 +1,60 @@
+{
+  "timestamp": "2025-08-23T07:06:33.118Z",
+  "url": "https://lmarena.ai/api/stream/create-evaluation",
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+    "content-type": "text/plain;charset=UTF-8",
+    "priority": "u=1, i",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "cookie": "[REDACTED]",
+    "Referer": "https://lmarena.ai/c/485735e1-5e7c-41b2-ad0a-3b8fa1c7cada",
+    "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
+    "sec-ch-ua-arch": "\"x86\"",
+    "sec-ch-ua-bitness": "\"64\"",
+    "sec-ch-ua-full-version": "\"131.0.6778.108\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-model": "\"\"",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-ch-ua-platform-version": "\"15.0.0\""
+  },
+  "requestBody": {
+    "id": "c438454b-19cf-42ad-94aa-0b803b43229f",
+    "mode": "direct",
+    "modelAId": "ee116d12-64d6-48a8-88e5-b2d06325cdd2",
+    "userMessageId": "bc50537b-4081-47cc-b53f-cfb1b1c74a94",
+    "modelAMessageId": "44d83a5d-ba74-41d1-b0f1-d0f3f03e545f",
+    "messages": [
+      {
+        "id": "bc50537b-4081-47cc-b53f-cfb1b1c74a94",
+        "role": "user",
+        "content": "你好",
+        "experimental_attachments": [],
+        "parentMessageIds": [],
+        "participantPosition": "a",
+        "modelId": null,
+        "evaluationSessionId": "c438454b-19cf-42ad-94aa-0b803b43229f",
+        "status": "pending",
+        "failureReason": null
+      },
+      {
+        "id": "44d83a5d-ba74-41d1-b0f1-d0f3f03e545f",
+        "role": "assistant",
+        "content": "",
+        "experimental_attachments": [],
+        "parentMessageIds": [
+          "bc50537b-4081-47cc-b53f-cfb1b1c74a94"
+        ],
+        "participantPosition": "a",
+        "modelId": "ee116d12-64d6-48a8-88e5-b2d06325cdd2",
+        "evaluationSessionId": "c438454b-19cf-42ad-94aa-0b803b43229f",
+        "status": "pending",
+        "failureReason": null
+      }
+    ],
+    "modality": "chat"
+  },
+  "headerVariant": "chrome"
+}

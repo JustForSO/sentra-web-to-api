@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-08-23T07:06:42.952Z",
+  "url": "https://lmarena.ai/api/stream/create-evaluation",
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+    "content-type": "text/plain;charset=UTF-8",
+    "priority": "u=1, i",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "cookie": "[REDACTED]",
+    "Referer": "https://lmarena.ai/c/485735e1-5e7c-41b2-ad0a-3b8fa1c7cada",
+    "sec-ch-ua": "\"Not;A=Brand\";v=\"99\", \"Microsoft Edge\";v=\"139\", \"Chromium\";v=\"139\"",
+    "sec-ch-ua-arch": "\"x86\"",
+    "sec-ch-ua-bitness": "\"64\"",
+    "sec-ch-ua-full-version": "\"139.0.3405.102\"",
+    "sec-ch-ua-full-version-list": "\"Not;A=Brand\";v=\"99.0.0.0\", \"Microsoft Edge\";v=\"139.0.3405.102\", \"Chromium\";v=\"139.0.7258.128\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-model": "\"\"",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-ch-ua-platform-version": "\"10.0.0\""
+  },
+  "requestBody": {
+    "id": "c20a4eb1-5a6d-45ec-a815-62ba80c3bb26",
+    "mode": "direct",
+    "modelAId": "ee116d12-64d6-48a8-88e5-b2d06325cdd2",
+    "userMessageId": "908dbf37-63ce-41d6-8593-ef39d6b55e3a",
+    "modelAMessageId": "aec0536d-1507-417d-9cd8-784e46567dc2",
+    "messages": [
+      {
+        "id": "908dbf37-63ce-41d6-8593-ef39d6b55e3a",
+        "role": "user",
+        "content": "你好",
+        "experimental_attachments": [],
+        "parentMessageIds": [],
+        "participantPosition": "a",
+        "modelId": null,
+        "evaluationSessionId": "c20a4eb1-5a6d-45ec-a815-62ba80c3bb26",
+        "status": "pending",
+        "failureReason": null
+      },
+      {
+        "id": "aec0536d-1507-417d-9cd8-784e46567dc2",
+        "role": "assistant",
+        "content": "",
+        "experimental_attachments": [],
+        "parentMessageIds": [
+          "908dbf37-63ce-41d6-8593-ef39d6b55e3a"
+        ],
+        "participantPosition": "a",
+        "modelId": "ee116d12-64d6-48a8-88e5-b2d06325cdd2",
+        "evaluationSessionId": "c20a4eb1-5a6d-45ec-a815-62ba80c3bb26",
+        "status": "pending",
+        "failureReason": null
+      }
+    ],
+    "modality": "chat"
+  },
+  "headerVariant": "edge"
+}

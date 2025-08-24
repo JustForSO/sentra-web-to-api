@@ -18,6 +18,7 @@ import { huggingface } from "../providers/ChatModels/huggingface/huggingfaceClie
 import { blackforest } from "../providers/ChatModels/blackforest/blackforestClient.js";
 import { modelscope } from "../providers/ChatModels/modelscope/modelscopeClient.js";
 import { kusa } from "../providers/ChatModels/kusa/kusaClient.js";
+import { chdotat } from "../providers/ChatModels/chdotat/chdotat.js";
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -65,7 +66,8 @@ const providerStats = {
     huggingface: { success: 0, failure: 0, weight: 88 },
     blackforest: { success: 0, failure: 0, weight: 96 },
     modelscope: { success: 0, failure: 0, weight: 94 },
-    kusa: { success: 0, failure: 0, weight: 92 }
+    kusa: { success: 0, failure: 0, weight: 92 },
+    chdotat: { success: 0, failure: 0, weight: 85 },
 };
 
 // 获取当前文件所在的目录
@@ -151,7 +153,8 @@ const providerApis = {
     huggingface: huggingface,
     blackforest: blackforest,
     modelscope: modelscope,
-    kusa: kusa
+    kusa: kusa,
+    chdotat: chdotat
 };
 
 // 默认超时时间 (可通过环境变量覆盖) AI_DEFAULT_TIMEOUT_MS
