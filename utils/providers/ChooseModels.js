@@ -20,6 +20,7 @@ import { modelscope } from "../providers/ChatModels/modelscope/modelscopeClient.
 import { kusa } from "../providers/ChatModels/kusa/kusaClient.js";
 import { chdotat } from "../providers/ChatModels/chdotat/chdotat.js";
 import { gmicloud } from "../providers/ChatModels/gmicloud/index.js";
+import { liblib } from "../providers/ChatModels/liblib/liblib.js";
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -70,6 +71,7 @@ const providerStats = {
     kusa: { success: 0, failure: 0, weight: 92 },
     chdotat: { success: 0, failure: 0, weight: 85 },
     gmicloud: { success: 0, failure: 0, weight: 90 },
+    liblib: { success: 0, failure: 0, weight: 93 },
 };
 
 // 获取当前文件所在的目录
@@ -157,7 +159,8 @@ const providerApis = {
     modelscope: modelscope,
     kusa: kusa,
     chdotat: chdotat,
-    gmicloud: gmicloud
+    gmicloud: gmicloud,
+    liblib: liblib
 };
 
 // 默认超时时间 (可通过环境变量覆盖) AI_DEFAULT_TIMEOUT_MS
